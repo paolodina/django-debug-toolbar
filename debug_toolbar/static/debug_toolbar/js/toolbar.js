@@ -68,6 +68,8 @@
                 if (!this.className) {
                     return;
                 }
+                // https://github.com/italia/design-django-theme/issues/7
+                this.className = this.className.replace('focus--mouse', '').trim();
                 var current = djDebug.querySelector('#' + this.className);
                 if ($$.visible(current)) {
                     djdt.hide_panels();
